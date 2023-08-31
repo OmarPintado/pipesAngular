@@ -23,5 +23,15 @@
       hola
     </p-card>
   </div>
+  <div class="col-12 md:col-4">
+    <p-card header="Date">
+      <ol>
+        <li>{{customDate}}</li>
+        <li>{{customDate | date:'short':'GMT-5'}}</li>
+        <li>{{customDate | date:'long':'':'es-PE'}}</li>
+        <li>{{customDate | date:'long':'':'fr-CA'}}</li>
+      </ol>
+    </p-card>
+  </div>
 
 </div>

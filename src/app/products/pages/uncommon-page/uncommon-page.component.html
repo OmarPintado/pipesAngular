@@ -1,1 +1,73 @@
-<p>uncommon-page works!</p>
+<p-panel header="Pipes no tan comunes" class="p-1">
+  <p>
+    Pipes incluidos en Angular - Usualmente en Common Module
+  </p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saludos {{name}}, es un placer
+        {{gender | i18nSelect:invitationMap}}
+        a nuestro evento
+      </p>
+
+      <p-button
+        (click)="changeClient()"
+        label="cambiar persona"
+      >
+      </p-button>
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>
+        Actualmente {{clients.length | i18nPlural:clientsMap}}
+      </p>
+      <p-button
+        label="Borrar cliente"
+        (click)="deleteClient()"
+      >
+      </p-button>
+    </p-fieldset>
+  </div>
+</div>
+<div class="grid mt-2">
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{clients}}</pre>
+
+      <b>Slice</b>
+      <pre>{{clients | slice:0:-4}}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <pre>{{person | json}}</pre>
+    </p-fieldset>
+  </div>
+</div>
+<div class="grid mt-2">
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b>{{item.key | titlecase}}: </b> {{item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+  <div class="col-12 md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <p>
+        Lorem ipsum dolor sit amet. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </p-fieldset>
+  </div>
+</div>
+
+
+
